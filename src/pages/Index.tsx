@@ -279,10 +279,8 @@ const Index = () => {
               </p>
             </div>
             <div className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700">
-                ¿En qué podemos ayudarte?
-              </label>
-              <Textarea id="message" name="message" value={formData.message} onChange={handleChange} className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent" placeholder="Cuéntanos sobre tu negocio y necesidades específicas..." rows={4} />
+              
+              
             </div>
             <Button type="submit" className="w-full bg-[#42E2B8] hover:bg-[#35B396] text-[#001F5C] text-lg font-medium py-6" disabled={isSubmitting}>
               {isSubmitting ? "Enviando..." : "Comenzar Prueba Gratuita de 7 días"}
