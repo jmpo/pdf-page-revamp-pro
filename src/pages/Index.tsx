@@ -94,7 +94,7 @@ const Index = () => {
             <div className="animate-fade-in">
               <div className="flex items-center mb-6">
                 <img alt="Chatea Logo" className="h-12 mr-3" src="/lovable-uploads/42aab7c1-8df0-4739-a395-64a0a969203b.png" />
-                <span className="font-bold text-[#202633] text-2xl">Chatea</span>
+                
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202633] mb-6">
                 Convierte tu WhatsApp<br />
