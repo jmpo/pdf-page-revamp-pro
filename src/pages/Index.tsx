@@ -130,9 +130,7 @@ const Index = () => {
             }}>
                 ¡Quiero potenciar mis ventas ahora!
               </Button>
-              <p className="text-xs text-gray-600 mt-3">
-                +1,500 empresas ya están aumentando sus ventas con Chatea
-              </p>
+              <p className="text-xs text-gray-600 mt-3">+30 empresas ya están aumentando sus ventas con Chatea</p>
             </div>
             <div className="animate-fade-in">
               <HeroImage />
@@ -354,8 +352,8 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <img src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" alt="Chatea Logo" className="h-10 mr-3" />
-                <span className="font-medium">Chatea</span>
+                <img alt="Chatea Logo" className="h-10 mr-3" src="/lovable-uploads/f8c2d803-807a-49e4-a274-3705f93b651d.png" />
+                
               </div>
               <p className="text-sm opacity-70 mb-4">
                 Transformando la manera en que las empresas se comunican con sus clientes a través de WhatsApp con inteligencia artificial avanzada.
