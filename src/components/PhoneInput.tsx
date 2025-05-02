@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { phone } from "lucide-react";
+import { Flag } from "lucide-react";
 
 interface PhoneInputProps {
   value: string;
@@ -18,7 +18,7 @@ const PhoneInput = ({ value, onChange, placeholder = "0991 111 222", required = 
     // Allow only numbers
     const rawValue = e.target.value.replace(/\D/g, '');
     
-    // Format for display (0991 111 222)
+    // Format for display with visual spacing (0991 111 222)
     let formattedDisplay = rawValue;
     if (rawValue.length > 4) {
       formattedDisplay = `${rawValue.substring(0, 4)} ${rawValue.substring(4)}`;
