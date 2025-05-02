@@ -10,6 +10,9 @@ import FeatureCard from "../components/FeatureCard";
 import TestimonialCard from "../components/TestimonialCard";
 import PricingCard from "../components/PricingCard";
 import FaqItem from "../components/FaqItem";
+import PhoneInput from "../components/PhoneInput";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +20,7 @@ const Index = () => {
     email: "",
     company: "",
     phone: "",
+    formattedPhone: "",
     message: "",
     terms: false,
   });
@@ -26,6 +30,14 @@ const Index = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handlePhoneChange = (rawValue: string, formattedValue: string) => {
+    setFormData((prev) => ({ 
+      ...prev, 
+      phone: rawValue,
+      formattedPhone: formattedValue 
+    }));
   };
 
   const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -48,6 +60,15 @@ const Index = () => {
     setIsSubmitting(true);
     
     try {
+      // Preparamos los datos para enviar al webhook con el formato correcto del teléfono
+      const webhookData = {
+        ...formData,
+        phone: formData.formattedPhone || `+595 ${formData.phone}` // Aseguramos que tenga formato correcto
+      };
+
+      // Log para debug
+      console.log("Datos a enviar al webhook:", webhookData);
+
       // Aquí implementaremos el llamado al webhook más adelante
       toast.success("¡Gracias por contactarnos! Pronto nos comunicaremos contigo.");
       setFormData({
@@ -55,6 +76,7 @@ const Index = () => {
         email: "",
         company: "",
         phone: "",
+        formattedPhone: "",
         message: "",
         terms: false,
       });
@@ -93,7 +115,7 @@ const Index = () => {
             <div className="animate-fade-in">
               <div className="flex items-center mb-6">
                 <img 
-                  src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" 
+                  src="/lovable-uploads/2d72229e-c1f2-4291-bd70-3efab07f2ef5.png" 
                   alt="Chatea Logo" 
                   className="h-12 mr-3"
                 />
@@ -279,11 +301,12 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#202633]">
-              ¡Da el primer paso hacia la automatización inteligente!
+              ¡Transforme su atención al cliente y venda más HOY!
             </h2>
             <p className="text-xl text-gray-700">
-              Completa el formulario y te mostraremos cómo puedes multiplicar tus ventas mientras reduces costos
+              Complete el formulario y le mostraremos cómo multiplicar sus ventas mientras reduce costos
             </p>
+            <p className="text-blue-600 font-medium mt-2">AUMENTE SU CONVERSIÓN</p>
           </div>
 
           <form 
@@ -305,23 +328,8 @@ const Index = () => {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700">
-                Correo electrónico *
-              </label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="ejemplo@empresa.com"
-                required
-              />
-            </div>
-            <div className="mb-6">
               <label htmlFor="company" className="block text-sm font-medium mb-2 text-gray-700">
-                Empresa
+                Nombre de tu Empresa
               </label>
               <Input
                 id="company"
@@ -333,19 +341,32 @@ const Index = () => {
               />
             </div>
             <div className="mb-6">
+              <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700">
+                Correo electrónico *
+              </label>
+              <Input
+                id="email"
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
+                placeholder="Tu correo electrónico"
+                required
+              />
+            </div>
+            <div className="mb-6">
               <label htmlFor="phone" className="block text-sm font-medium mb-2 text-gray-700">
                 Teléfono *
               </label>
-              <Input
-                id="phone"
-                name="phone"
-                type="tel"
+              <PhoneInput
                 value={formData.phone}
-                onChange={handleChange}
-                className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="+595 XXX XXX XXX"
-                required
+                onChange={handlePhoneChange}
+                required={true}
               />
+              <p className="text-xs text-gray-500 mt-1">
+                Formato: 0991 111 222
+              </p>
             </div>
             <div className="mb-6">
               <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700">
@@ -378,14 +399,34 @@ const Index = () => {
             </div>
             <Button
               type="submit"
-              className="w-full bg-[#36a7e3] hover:bg-[#2686bb] text-white text-lg font-medium py-6"
+              className="w-full bg-[#42E2B8] hover:bg-[#35B396] text-[#001F5C] text-lg font-medium py-6"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Enviando..." : "¡Quiero potenciar mis ventas ahora!"}
+              {isSubmitting ? "Enviando..." : "Comenzar Prueba Gratuita de 7 días"}
             </Button>
-            <p className="text-center text-sm text-gray-500 mt-4">
-              Te responderemos en menos de 24 horas
-            </p>
+            
+            <div className="mt-6 space-y-3">
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                <span className="text-sm text-gray-600">7 días de Prueba GRATIS</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                <span className="text-sm text-gray-600">No necesitas ingresar tu tarjeta crédito</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                <span className="text-sm text-gray-600">No te preocupes, cuidamos tus datos personales</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                <span className="text-sm text-gray-600">Contrato Mensual, puedes cancelar en cualquier momento</span>
+              </div>
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-green-500 mr-2 shrink-0" />
+                <span className="text-sm text-gray-600">Te ayudamos con la configuración inicial</span>
+              </div>
+            </div>
           </form>
         </div>
       </section>
