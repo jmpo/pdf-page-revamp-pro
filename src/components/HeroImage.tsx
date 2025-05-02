@@ -16,7 +16,7 @@ const HeroImage = () => {
     <div className="relative">
       <div className={`transform transition-all duration-700 ease-out ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
         <img 
-          src="/lovable-uploads/7c729b7a-2160-433e-ad8c-a18b72e80954.png" 
+          src="/lovable-uploads/3e2d3772-8a74-427e-a363-b0512c911f69.png" 
           alt="Chatea Dashboard" 
           className="w-full h-auto rounded-lg shadow-2xl border border-[#36a7e3]/30"
         />

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Check, MessageSquare, Users, Zap } from "lucide-react";
+import { Check, MessageSquare, Users, Zap, Bot } from "lucide-react";
 import HeroImage from "../components/HeroImage";
 import FeatureCard from "../components/FeatureCard";
 import TestimonialCard from "../components/TestimonialCard";
@@ -93,28 +93,28 @@ const Index = () => {
             <div className="animate-fade-in">
               <div className="flex items-center mb-6">
                 <img 
-                  src="/lovable-uploads/7c729b7a-2160-433e-ad8c-a18b72e80954.png" 
+                  src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" 
                   alt="Chatea Logo" 
-                  className="h-10 mr-3"
+                  className="h-12 mr-3"
                 />
-                <span className="font-medium text-[#202633] text-xl">Chatea</span>
+                <span className="font-bold text-[#202633] text-2xl">Chatea</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202633] mb-6">
-                Transforma tu WhatsApp<br />
-                en una <span className="text-[#36a7e3]">Máquina de Ventas</span><br />
-                Sin Complicaciones.
+                Convierte tu WhatsApp<br />
+                en un <span className="text-[#36a7e3]">Potente Vendedor</span><br />
+                que Nunca Duerme
               </h1>
               <p className="text-gray-700 text-lg mb-6">
-                Automatiza tus mensajes, brinda atención inmediata a tus clientes y aumenta tus ventas efectivamente con nuestra plataforma especializada.
+                Olvídate de mensajes perdidos y clientes insatisfechos. Con la IA de Chatea, automatiza respuestas, captura leads 24/7 y multiplica tus ventas sin contratar personal adicional.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span>Respuestas automáticas 24/7</span>
+                  <span>Atención inmediata con inteligencia artificial 24/7</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span>Mensajes personalizados para cada cliente</span>
+                  <span>Personalización inteligente para cada cliente</span>
                 </div>
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
@@ -122,7 +122,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <Check className="h-5 w-5 text-green-500 mr-3" />
-                  <span>Aumenta ventas sin contratar más personal</span>
+                  <span>ROI positivo desde el primer mes garantizado</span>
                 </div>
               </div>
               <Button 
@@ -132,10 +132,10 @@ const Index = () => {
                   contactForm?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                ¡Quiero aumentar mis ventas!
+                ¡Quiero potenciar mis ventas ahora!
               </Button>
               <p className="text-xs text-gray-600 mt-3">
-                +1,500 equipos ya confían en Chatea
+                +1,500 empresas ya están aumentando sus ventas con Chatea
               </p>
             </div>
             <div className="animate-fade-in">
@@ -149,8 +149,8 @@ const Index = () => {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#202633]">¡Míralo funcionando!</h2>
-            <p className="text-xl text-gray-600">Descubre cómo Chatea transforma la manera en que te comunicas con tus clientes</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#202633]">Mira cómo Chatea revoluciona tu atención al cliente</h2>
+            <p className="text-xl text-gray-600">Descubre por qué cientos de empresas confían en nuestra tecnología de IA para multiplicar sus ventas</p>
           </div>
           <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
             <div style={{ position: "relative", paddingTop: "56.25%" }}>
@@ -173,26 +173,26 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-[#202633]">
-                ¿Tu equipo se ahoga en un mar de mensajes y pierdes ventas valiosas?
+                ¿Estás perdiendo ventas por no responder a tiempo?
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start">
                   <div className="bg-red-100 p-2 rounded-full mr-4 mt-1">
                     <span className="text-red-500 font-bold">✕</span>
                   </div>
-                  <p className="text-gray-700">Tu bandeja de WhatsApp está saturada de mensajes sin responder de clientes potenciales</p>
+                  <p className="text-gray-700">El 78% de tus clientes potenciales compran con quien responde primero - ¿y si ese no eres tú?</p>
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-100 p-2 rounded-full mr-4 mt-1">
                     <span className="text-red-500 font-bold">✕</span>
                   </div>
-                  <p className="text-gray-700">Los clientes se van con la competencia al no recibir respuestas rápidas</p>
+                  <p className="text-gray-700">Cada minuto que no respondes, pierdes dinero y tu competencia gana terreno</p>
                 </div>
                 <div className="flex items-start">
                   <div className="bg-red-100 p-2 rounded-full mr-4 mt-1">
                     <span className="text-red-500 font-bold">✕</span>
                   </div>
-                  <p className="text-gray-700">Tu equipo pierde tiempo respondiendo las mismas preguntas una y otra vez</p>
+                  <p className="text-gray-700">Tu equipo agotado repitiendo las mismas respuestas básicas en lugar de cerrar ventas</p>
                 </div>
               </div>
               <Button 
@@ -202,12 +202,12 @@ const Index = () => {
                   contactForm?.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
-                Resolver estos problemas ahora
+                Solucionar estos problemas ahora
               </Button>
             </div>
             <div className="animate-fade-in order-first md:order-last">
               <img 
-                src="/lovable-uploads/7c729b7a-2160-433e-ad8c-a18b72e80954.png" 
+                src="/lovable-uploads/3e2d3772-8a74-427e-a363-b0512c911f69.png" 
                 alt="Problemas de comunicación" 
                 className="w-full h-auto rounded-lg shadow-lg border border-[#36a7e3]/20"
               />
@@ -221,28 +221,28 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Con Chatea, transforma tu WhatsApp en una herramienta poderosa de ventas y atención al cliente
+              La solución definitiva: Chatea con Inteligencia Artificial integrada
             </h2>
             <p className="text-xl opacity-90">
-              Olvídate del caos y descubre una nueva forma de comunicar con tus clientes
+              Tecnología avanzada que transforma conversaciones en ventas automáticamente, mientras tu equipo se enfoca en lo importante
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard 
               icon={<MessageSquare className="h-10 w-10" />}
-              title="Automatización inteligente"
-              description="Respuestas automáticas personalizadas que hacen que tus clientes se sientan atendidos 24/7"
+              title="Automatización Inteligente con IA"
+              description="Respuestas automáticas con IA que entienden preguntas complejas y personalizan cada interacción para aumentar conversiones"
             />
             <FeatureCard 
-              icon={<Users className="h-10 w-10" />}
-              title="Gestión de equipo centralizada"
-              description="Asigna conversaciones, supervisa respuestas y organiza eficientemente a tu equipo de ventas"
+              icon={<Bot className="h-10 w-10" />}
+              title="Atención 24/7 Sin Descanso"
+              description="Tu vendedor virtual nunca duerme, nunca se cansa y siempre responde en segundos, capturando leads que tu competencia pierde"
             />
             <FeatureCard 
               icon={<Zap className="h-10 w-10" />}
-              title="Análisis y optimización"
-              description="Monitorea el rendimiento de tus conversiones y optimiza tus estrategias con datos reales"
+              title="Analytics y Optimización"
+              description="Datos precisos sobre cada conversación para optimizar tu estrategia y aumentar tu tasa de conversión mes a mes"
             />
           </div>
         </div>
@@ -252,7 +252,7 @@ const Index = () => {
       <section className="bg-white py-20">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#202633]">
-            Por estos motivos nuestros clientes aman Chatea
+            Empresas que multiplicaron sus ventas con Chatea
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -261,14 +261,14 @@ const Index = () => {
               name="Carlos Mendoza"
               position="Director de Ventas"
               company="TechSolutions"
-              testimonial="Desde que implementamos Chatea, nuestras conversiones aumentaron un 43%. La automatización nos permite atender más clientes sin contratar personal adicional."
+              testimonial="Desde que implementamos Chatea, nuestras conversiones aumentaron un 43%. La automatización con IA nos permite atender más clientes sin contratar personal adicional."
             />
             <TestimonialCard 
               image="/placeholder.svg"
               name="Ana García"
               position="CEO"
               company="Moda Express"
-              testimonial="Chatea transformó nuestra atención al cliente. Ahora respondemos en segundos y nuestros clientes están encantados. Las ventas han subido consistentemente cada mes."
+              testimonial="Chatea transformó nuestra atención al cliente. Ahora respondemos en segundos y nuestros clientes están encantados. Las ventas han subido un 37% en solo dos meses."
             />
           </div>
         </div>
@@ -279,8 +279,11 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-2xl mx-auto text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#202633]">
-              ¡Transforma tu atención al cliente y vende más HOY!
+              ¡Da el primer paso hacia la automatización inteligente!
             </h2>
+            <p className="text-xl text-gray-700">
+              Completa el formulario y te mostraremos cómo puedes multiplicar tus ventas mientras reduces costos
+            </p>
           </div>
 
           <form 
@@ -340,7 +343,7 @@ const Index = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="+57 123 456 7890"
+                placeholder="+595 XXX XXX XXX"
                 required
               />
             </div>
@@ -354,7 +357,7 @@ const Index = () => {
                 value={formData.message}
                 onChange={handleChange}
                 className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="Cuéntanos sobre tu negocio y necesidades..."
+                placeholder="Cuéntanos sobre tu negocio y necesidades específicas..."
                 rows={4}
               />
             </div>
@@ -378,8 +381,11 @@ const Index = () => {
               className="w-full bg-[#36a7e3] hover:bg-[#2686bb] text-white text-lg font-medium py-6"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Enviando..." : "Solicitar información"}
+              {isSubmitting ? "Enviando..." : "¡Quiero potenciar mis ventas ahora!"}
             </Button>
+            <p className="text-center text-sm text-gray-500 mt-4">
+              Te responderemos en menos de 24 horas
+            </p>
           </form>
         </div>
       </section>
@@ -389,55 +395,58 @@ const Index = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#202633]">
-              Mejora tu atención al cliente con nuestros planes personalizados
+              Planes diseñados para maximizar tu ROI
             </h2>
             <p className="text-gray-600">
-              Elige el plan que mejor se adapte a tus necesidades y comienza a transformar tu negocio hoy mismo
+              Escoge el plan ideal para tu negocio y empieza a multiplicar tus ventas hoy mismo
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <PricingCard 
-              title="Starter"
+              title="Prueba"
               price="0"
-              description="Ideal para comenzar"
+              description="Pruébalo por 7 días"
               features={[
-                "1 número de WhatsApp",
-                "Hasta 100 mensajes diarios",
-                "Respuestas automáticas básicas",
-                "Soporte por correo"
+                "5 usuarios simultáneos",
+                "1 Conexión a Whatsapp",
+                "Bot para atención",
+                "Gestión del departamento",
+                "Soporte vía WhatsApp"
               ]}
-              ctaText="Comenzar Gratis"
+              ctaText="Probar 7 Días GRATIS"
               popular={false}
+              discount="*Luego de los 7 días se deberá elegir un Plan"
             />
             <PricingCard 
-              title="Business"
+              title="Plan Emprendedor"
               price="500.000"
-              description="Perfecto para equipos en crecimiento"
+              description="Ideal si quieres conectar hasta 1 Whatsapp"
               features={[
-                "5 números de WhatsApp",
-                "Mensajes ilimitados",
-                "Respuestas automáticas avanzadas",
-                "Asignación de conversaciones",
-                "Soporte prioritario"
+                "5 usuarios simultáneos",
+                "1 Conexión a Whatsapp",
+                "Bot para atención con IA",
+                "Gestión del departamento",
+                "Soporte vía WhatsApp"
               ]}
-              ctaText="Elegir Plan"
+              ctaText="Comprar Ahora"
               popular={true}
+              discount="*Tenemos hasta un 20% de descuento en el pago del PLAN ANUAL"
             />
             <PricingCard 
-              title="Enterprise"
+              title="Plan Equipo de Ventas"
               price="800.000"
-              description="Para empresas que necesitan máximo rendimiento"
+              description="Ideal si ya tienes un equipo de ventas con hasta 10 vendedores"
               features={[
-                "Números ilimitados",
-                "Mensajes ilimitados",
-                "IA para respuestas personalizadas",
-                "Integración con CRM",
-                "API personalizada",
-                "Gerente de cuenta dedicado"
+                "10 usuarios simultáneos",
+                "2 Conexiones a Whatsapp",
+                "Bot para atención con IA avanzada",
+                "Gestión del departamento",
+                "Soporte prioritario vía WhatsApp"
               ]}
-              ctaText="Contactar Ventas"
+              ctaText="Comprar Ahora"
               popular={false}
+              discount="*Tenemos hasta un 30% de descuento en el pago del PLAN ANUAL"
             />
           </div>
         </div>
@@ -452,20 +461,20 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <FaqItem
-              question="¿Cómo funciona Chatea?"
-              answer="Chatea se integra con tu WhatsApp Business API para automatizar respuestas, organizar conversaciones y proporcionar análisis detallados. Solo necesitas registrarte, configurar tus respuestas y comenzar a optimizar tu atención al cliente."
+              question="¿Cómo funciona la Inteligencia Artificial de Chatea?"
+              answer="Nuestra IA avanzada analiza cada mensaje entrante para entender la intención del cliente, proporciona respuestas personalizadas basadas en tu catálogo y servicios, y aprende continuamente para mejorar las conversiones. Todo esto mientras mantiene un tono conversacional que tus clientes adorarán."
             />
             <FaqItem
-              question="¿Necesito algún conocimiento técnico para usarlo?"
-              answer="¡En absoluto! Chatea está diseñado para ser extremadamente fácil de usar. Nuestra interfaz intuitiva permite que cualquier persona, sin importar su nivel técnico, pueda configurar y utilizar todas las funcionalidades."
+              question="¿Necesito conocimientos técnicos para implementarlo?"
+              answer="¡Absolutamente no! Chatea está diseñado para ser extremadamente intuitivo. Te asignamos un especialista que configura todo por ti en menos de 24 horas, y te capacitamos para que aproveches todas las funcionalidades al máximo."
             />
             <FaqItem
               question="¿Es compatible con otros sistemas que ya uso?"
-              answer="Sí, Chatea puede integrarse con la mayoría de CRMs populares y otras herramientas de negocio como Salesforce, HubSpot y más. Si tienes una integración específica en mente, contáctanos para verificar la compatibilidad."
+              answer="Sí, Chatea se integra perfectamente con la mayoría de CRMs populares y otras herramientas de negocio como Salesforce, HubSpot y más. Además, nuestra API permite conectar con prácticamente cualquier sistema existente en tu empresa."
             />
             <FaqItem
-              question="¿Cuánto tiempo toma implementar Chatea en mi negocio?"
-              answer="La mayoría de nuestros clientes están completamente configurados y operativos en menos de 24 horas. Nuestro equipo de soporte está disponible para ayudarte en cada paso del proceso de implementación."
+              question="¿Cuánto tiempo toma ver resultados con Chatea?"
+              answer="La mayoría de nuestros clientes experimentan un aumento en sus conversiones en la primera semana. El sistema comienza a capturar leads que antes se perdían de inmediato, y la tasa de conversión mejora continuamente conforme la IA se adapta a tu negocio específico."
             />
           </div>
         </div>
@@ -478,14 +487,14 @@ const Index = () => {
             <div>
               <div className="flex items-center mb-4">
                 <img 
-                  src="/lovable-uploads/7c729b7a-2160-433e-ad8c-a18b72e80954.png" 
+                  src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" 
                   alt="Chatea Logo" 
                   className="h-10 mr-3"
                 />
                 <span className="font-medium">Chatea</span>
               </div>
               <p className="text-sm opacity-70 mb-4">
-                Transformando la manera en que las empresas se comunican con sus clientes a través de WhatsApp.
+                Transformando la manera en que las empresas se comunican con sus clientes a través de WhatsApp con inteligencia artificial avanzada.
               </p>
               <div className="flex space-x-4">
                 <a href="#" className="text-white hover:text-[#36a7e3]">

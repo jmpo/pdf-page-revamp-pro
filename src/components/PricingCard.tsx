@@ -9,6 +9,8 @@ interface PricingCardProps {
   features: string[];
   ctaText: string;
   popular?: boolean;
+  discount?: string;
+  isAnnual?: boolean;
 }
 
 const PricingCard = ({ 
@@ -17,7 +19,9 @@ const PricingCard = ({
   description, 
   features, 
   ctaText,
-  popular = false
+  popular = false,
+  discount,
+  isAnnual = false
 }: PricingCardProps) => {
   return (
     <div className={`
@@ -56,6 +60,12 @@ const PricingCard = ({
         >
           {ctaText}
         </Button>
+        
+        {discount && (
+          <p className="text-center mt-4 text-sm text-green-600 font-medium">
+            {discount}
+          </p>
+        )}
       </div>
     </div>
   );
