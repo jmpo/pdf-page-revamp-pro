@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -24,6 +25,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				chatia: {
+					turquoise: '#42E2B8',
+					navy: '#001F5C',
+					lightTeal: '#E3FCFA',
+					darkTeal: '#35B396',
+					darkNavy: '#00183E',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
