@@ -9,41 +9,39 @@ import TestimonialCard from "../components/TestimonialCard";
 import PricingCard from "../components/PricingCard";
 import FaqItem from "../components/FaqItem";
 import PhoneInput from "../components/PhoneInput";
-
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
     company: "",
     phone: "",
     formattedPhone: "",
-    message: "",
+    message: ""
   });
-  
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handlePhoneChange = (rawValue: string, formattedValue: string) => {
-    setFormData((prev) => ({ 
-      ...prev, 
-      phone: rawValue,
-      formattedPhone: formattedValue 
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
     }));
   };
-
+  const handlePhoneChange = (rawValue: string, formattedValue: string) => {
+    setFormData(prev => ({
+      ...prev,
+      phone: rawValue,
+      formattedPhone: formattedValue
+    }));
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!formData.name || !formData.phone) {
       toast.error("Por favor, complete todos los campos requeridos");
       return;
     }
-
     setIsSubmitting(true);
-    
     try {
       // Preparamos los datos para enviar al webhook con el formato correcto del teléfono
       const webhookData = {
@@ -61,7 +59,7 @@ const Index = () => {
         company: "",
         phone: "",
         formattedPhone: "",
-        message: "",
+        message: ""
       });
     } catch (error) {
       toast.error("Ha ocurrido un error. Por favor, inténtalo de nuevo.");
@@ -73,35 +71,29 @@ const Index = () => {
   // Efecto para animaciones al cargar
   useEffect(() => {
     const animatedElements = document.querySelectorAll('.animate-fade-in');
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
-    
+    }, {
+      threshold: 0.1
+    });
     animatedElements.forEach(el => observer.observe(el));
-    
     return () => {
       animatedElements.forEach(el => observer.unobserve(el));
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-[#f8f9fa]">
+  return <div className="min-h-screen bg-[#f8f9fa]">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#e6f4ff] to-[#c5e7ff] py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <div className="flex items-center mb-6">
-                <img 
-                  src="/lovable-uploads/2d72229e-c1f2-4291-bd70-3efab07f2ef5.png" 
-                  alt="Chatea Logo" 
-                  className="h-12 mr-3"
-                />
+                <img alt="Chatea Logo" className="h-12 mr-3" src="/lovable-uploads/42aab7c1-8df0-4739-a395-64a0a969203b.png" />
                 <span className="font-bold text-[#202633] text-2xl">Chatea</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#202633] mb-6">
@@ -130,13 +122,12 @@ const Index = () => {
                   <span>ROI positivo desde el primer mes garantizado</span>
                 </div>
               </div>
-              <Button 
-                className="animate-pulse-subtle bg-[#36a7e3] hover:bg-[#2686bb] text-white text-lg font-medium px-8 py-6"
-                onClick={() => {
-                  const contactForm = document.getElementById('contactForm');
-                  contactForm?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
+              <Button className="animate-pulse-subtle bg-[#36a7e3] hover:bg-[#2686bb] text-white text-lg font-medium px-8 py-6" onClick={() => {
+              const contactForm = document.getElementById('contactForm');
+              contactForm?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}>
                 ¡Quiero potenciar mis ventas ahora!
               </Button>
               <p className="text-xs text-gray-600 mt-3">
@@ -158,15 +149,17 @@ const Index = () => {
             <p className="text-xl text-gray-600">Descubre por qué cientos de empresas confían en nuestra tecnología de IA para multiplicar sus ventas</p>
           </div>
           <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl">
-            <div style={{ position: "relative", paddingTop: "56.25%" }}>
-              <iframe 
-                src="https://iframe.mediadelivery.net/embed/364591/38c49cee-f2a2-4533-9924-19ddabdc9387?autoplay=true&loop=false&muted=false&preload=true&responsive=true" 
-                style={{ border: 0, position: "absolute", top: 0, height: "100%", width: "100%" }} 
-                loading="lazy"
-                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" 
-                allowFullScreen={true}
-                title="Chatea Demo"
-              ></iframe>
+            <div style={{
+            position: "relative",
+            paddingTop: "56.25%"
+          }}>
+              <iframe src="https://iframe.mediadelivery.net/embed/364591/38c49cee-f2a2-4533-9924-19ddabdc9387?autoplay=true&loop=false&muted=false&preload=true&responsive=true" style={{
+              border: 0,
+              position: "absolute",
+              top: 0,
+              height: "100%",
+              width: "100%"
+            }} loading="lazy" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;" allowFullScreen={true} title="Chatea Demo"></iframe>
             </div>
           </div>
         </div>
@@ -200,22 +193,17 @@ const Index = () => {
                   <p className="text-gray-700">Tu equipo agotado repitiendo las mismas respuestas básicas en lugar de cerrar ventas</p>
                 </div>
               </div>
-              <Button 
-                className="mt-8 bg-[#36a7e3] hover:bg-[#2686bb] text-white font-medium"
-                onClick={() => {
-                  const contactForm = document.getElementById('contactForm');
-                  contactForm?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
+              <Button className="mt-8 bg-[#36a7e3] hover:bg-[#2686bb] text-white font-medium" onClick={() => {
+              const contactForm = document.getElementById('contactForm');
+              contactForm?.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }}>
                 Solucionar estos problemas ahora
               </Button>
             </div>
             <div className="animate-fade-in order-first md:order-last">
-              <img 
-                src="/lovable-uploads/3e2d3772-8a74-427e-a363-b0512c911f69.png" 
-                alt="Problemas de comunicación" 
-                className="w-full h-auto rounded-lg shadow-lg border border-[#36a7e3]/20"
-              />
+              <img src="/lovable-uploads/3e2d3772-8a74-427e-a363-b0512c911f69.png" alt="Problemas de comunicación" className="w-full h-auto rounded-lg shadow-lg border border-[#36a7e3]/20" />
             </div>
           </div>
         </div>
@@ -234,21 +222,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard 
-              icon={<MessageSquare className="h-10 w-10" />}
-              title="Automatización Inteligente con IA"
-              description="Respuestas automáticas con IA que entienden preguntas complejas y personalizan cada interacción para aumentar conversiones"
-            />
-            <FeatureCard 
-              icon={<Bot className="h-10 w-10" />}
-              title="Atención 24/7 Sin Descanso"
-              description="Tu vendedor virtual nunca duerme, nunca se cansa y siempre responde en segundos, capturando leads que tu competencia pierde"
-            />
-            <FeatureCard 
-              icon={<Zap className="h-10 w-10" />}
-              title="Analytics y Optimización"
-              description="Datos precisos sobre cada conversación para optimizar tu estrategia y aumentar tu tasa de conversión mes a mes"
-            />
+            <FeatureCard icon={<MessageSquare className="h-10 w-10" />} title="Automatización Inteligente con IA" description="Respuestas automáticas con IA que entienden preguntas complejas y personalizan cada interacción para aumentar conversiones" />
+            <FeatureCard icon={<Bot className="h-10 w-10" />} title="Atención 24/7 Sin Descanso" description="Tu vendedor virtual nunca duerme, nunca se cansa y siempre responde en segundos, capturando leads que tu competencia pierde" />
+            <FeatureCard icon={<Zap className="h-10 w-10" />} title="Analytics y Optimización" description="Datos precisos sobre cada conversación para optimizar tu estrategia y aumentar tu tasa de conversión mes a mes" />
           </div>
         </div>
       </section>
@@ -261,20 +237,8 @@ const Index = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <TestimonialCard 
-              image="/placeholder.svg"
-              name="Carlos Mendoza"
-              position="Director de Ventas"
-              company="TechSolutions"
-              testimonial="Desde que implementamos Chatea, nuestras conversiones aumentaron un 43%. La automatización con IA nos permite atender más clientes sin contratar personal adicional."
-            />
-            <TestimonialCard 
-              image="/placeholder.svg"
-              name="Ana García"
-              position="CEO"
-              company="Moda Express"
-              testimonial="Chatea transformó nuestra atención al cliente. Ahora respondemos en segundos y nuestros clientes están encantados. Las ventas han subido un 37% en solo dos meses."
-            />
+            <TestimonialCard image="/placeholder.svg" name="Carlos Mendoza" position="Director de Ventas" company="TechSolutions" testimonial="Desde que implementamos Chatea, nuestras conversiones aumentaron un 43%. La automatización con IA nos permite atender más clientes sin contratar personal adicional." />
+            <TestimonialCard image="/placeholder.svg" name="Ana García" position="CEO" company="Moda Express" testimonial="Chatea transformó nuestra atención al cliente. Ahora respondemos en segundos y nuestros clientes están encantados. Las ventas han subido un 37% en solo dos meses." />
           </div>
         </div>
       </section>
@@ -292,46 +256,24 @@ const Index = () => {
             <p className="text-blue-600 font-medium mt-2">AUMENTE SU CONVERSIÓN</p>
           </div>
 
-          <form 
-            className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg"
-            onSubmit={handleSubmit}
-          >
+          <form className="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-lg" onSubmit={handleSubmit}>
             <div className="mb-6">
               <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700">
                 Nombre completo *
               </label>
-              <input
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="Ingrese su nombre"
-                required
-              />
+              <input id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent" placeholder="Ingrese su nombre" required />
             </div>
             <div className="mb-6">
               <label htmlFor="company" className="block text-sm font-medium mb-2 text-gray-700">
                 Nombre de tu Empresa
               </label>
-              <input
-                id="company"
-                name="company"
-                value={formData.company}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="Nombre de su empresa"
-              />
+              <input id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent" placeholder="Nombre de su empresa" />
             </div>
             <div className="mb-6">
               <label htmlFor="phone" className="block text-sm font-medium mb-2 text-gray-700">
                 Teléfono *
               </label>
-              <PhoneInput
-                value={formData.phone}
-                onChange={handlePhoneChange}
-                required={true}
-              />
+              <PhoneInput value={formData.phone} onChange={handlePhoneChange} required={true} />
               <p className="text-xs text-gray-500 mt-1">
                 Formato: 0991 111 222
               </p>
@@ -340,21 +282,9 @@ const Index = () => {
               <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700">
                 ¿En qué podemos ayudarte?
               </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent"
-                placeholder="Cuéntanos sobre tu negocio y necesidades específicas..."
-                rows={4}
-              />
+              <Textarea id="message" name="message" value={formData.message} onChange={handleChange} className="border-gray-300 focus:ring-2 focus:ring-[#36a7e3] focus:border-transparent" placeholder="Cuéntanos sobre tu negocio y necesidades específicas..." rows={4} />
             </div>
-            <Button
-              type="submit"
-              className="w-full bg-[#42E2B8] hover:bg-[#35B396] text-[#001F5C] text-lg font-medium py-6"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" className="w-full bg-[#42E2B8] hover:bg-[#35B396] text-[#001F5C] text-lg font-medium py-6" disabled={isSubmitting}>
               {isSubmitting ? "Enviando..." : "Comenzar Prueba Gratuita de 7 días"}
             </Button>
             
@@ -397,51 +327,9 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <PricingCard 
-              title="Prueba"
-              price="0"
-              description="Pruébalo por 7 días"
-              features={[
-                "5 usuarios simultáneos",
-                "1 Conexión a Whatsapp",
-                "Bot para atención",
-                "Gestión del departamento",
-                "Soporte vía WhatsApp"
-              ]}
-              ctaText="Probar 7 Días GRATIS"
-              popular={false}
-              discount="*Luego de los 7 días se deberá elegir un Plan"
-            />
-            <PricingCard 
-              title="Plan Emprendedor"
-              price="500.000"
-              description="Ideal si quieres conectar hasta 1 Whatsapp"
-              features={[
-                "5 usuarios simultáneos",
-                "1 Conexión a Whatsapp",
-                "Bot para atención con IA",
-                "Gestión del departamento",
-                "Soporte vía WhatsApp"
-              ]}
-              ctaText="Comprar Ahora"
-              popular={true}
-              discount="*Tenemos hasta un 20% de descuento en el pago del PLAN ANUAL"
-            />
-            <PricingCard 
-              title="Plan Equipo de Ventas"
-              price="800.000"
-              description="Ideal si ya tienes un equipo de ventas con hasta 10 vendedores"
-              features={[
-                "10 usuarios simultáneos",
-                "2 Conexiones a Whatsapp",
-                "Bot para atención con IA avanzada",
-                "Gestión del departamento",
-                "Soporte prioritario vía WhatsApp"
-              ]}
-              ctaText="Comprar Ahora"
-              popular={false}
-              discount="*Tenemos hasta un 30% de descuento en el pago del PLAN ANUAL"
-            />
+            <PricingCard title="Prueba" price="0" description="Pruébalo por 7 días" features={["5 usuarios simultáneos", "1 Conexión a Whatsapp", "Bot para atención", "Gestión del departamento", "Soporte vía WhatsApp"]} ctaText="Probar 7 Días GRATIS" popular={false} discount="*Luego de los 7 días se deberá elegir un Plan" />
+            <PricingCard title="Plan Emprendedor" price="500.000" description="Ideal si quieres conectar hasta 1 Whatsapp" features={["5 usuarios simultáneos", "1 Conexión a Whatsapp", "Bot para atención con IA", "Gestión del departamento", "Soporte vía WhatsApp"]} ctaText="Comprar Ahora" popular={true} discount="*Tenemos hasta un 20% de descuento en el pago del PLAN ANUAL" />
+            <PricingCard title="Plan Equipo de Ventas" price="800.000" description="Ideal si ya tienes un equipo de ventas con hasta 10 vendedores" features={["10 usuarios simultáneos", "2 Conexiones a Whatsapp", "Bot para atención con IA avanzada", "Gestión del departamento", "Soporte prioritario vía WhatsApp"]} ctaText="Comprar Ahora" popular={false} discount="*Tenemos hasta un 30% de descuento en el pago del PLAN ANUAL" />
           </div>
         </div>
       </section>
@@ -454,22 +342,10 @@ const Index = () => {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <FaqItem
-              question="¿Cómo funciona la Inteligencia Artificial de Chatea?"
-              answer="Nuestra IA avanzada analiza cada mensaje entrante para entender la intención del cliente, proporciona respuestas personalizadas basadas en tu catálogo y servicios, y aprende continuamente para mejorar las conversiones. Todo esto mientras mantiene un tono conversacional que tus clientes adorarán."
-            />
-            <FaqItem
-              question="¿Necesito conocimientos técnicos para implementarlo?"
-              answer="¡Absolutamente no! Chatea está diseñado para ser extremadamente intuitivo. Te asignamos un especialista que configura todo por ti en menos de 24 horas, y te capacitamos para que aproveches todas las funcionalidades al máximo."
-            />
-            <FaqItem
-              question="¿Es compatible con otros sistemas que ya uso?"
-              answer="Sí, Chatea se integra perfectamente con la mayoría de CRMs populares y otras herramientas de negocio como Salesforce, HubSpot y más. Además, nuestra API permite conectar con prácticamente cualquier sistema existente en tu empresa."
-            />
-            <FaqItem
-              question="¿Cuánto tiempo toma ver resultados con Chatea?"
-              answer="La mayoría de nuestros clientes experimentan un aumento en sus conversiones en la primera semana. El sistema comienza a capturar leads que antes se perdían de inmediato, y la tasa de conversión mejora continuamente conforme la IA se adapta a tu negocio específico."
-            />
+            <FaqItem question="¿Cómo funciona la Inteligencia Artificial de Chatea?" answer="Nuestra IA avanzada analiza cada mensaje entrante para entender la intención del cliente, proporciona respuestas personalizadas basadas en tu catálogo y servicios, y aprende continuamente para mejorar las conversiones. Todo esto mientras mantiene un tono conversacional que tus clientes adorarán." />
+            <FaqItem question="¿Necesito conocimientos técnicos para implementarlo?" answer="¡Absolutamente no! Chatea está diseñado para ser extremadamente intuitivo. Te asignamos un especialista que configura todo por ti en menos de 24 horas, y te capacitamos para que aproveches todas las funcionalidades al máximo." />
+            <FaqItem question="¿Es compatible con otros sistemas que ya uso?" answer="Sí, Chatea se integra perfectamente con la mayoría de CRMs populares y otras herramientas de negocio como Salesforce, HubSpot y más. Además, nuestra API permite conectar con prácticamente cualquier sistema existente en tu empresa." />
+            <FaqItem question="¿Cuánto tiempo toma ver resultados con Chatea?" answer="La mayoría de nuestros clientes experimentan un aumento en sus conversiones en la primera semana. El sistema comienza a capturar leads que antes se perdían de inmediato, y la tasa de conversión mejora continuamente conforme la IA se adapta a tu negocio específico." />
           </div>
         </div>
       </section>
@@ -480,11 +356,7 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <img 
-                  src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" 
-                  alt="Chatea Logo" 
-                  className="h-10 mr-3"
-                />
+                <img src="/lovable-uploads/67cf97cd-8cf5-4918-9c3c-f36bda8dfa49.png" alt="Chatea Logo" className="h-10 mr-3" />
                 <span className="font-medium">Chatea</span>
               </div>
               <p className="text-sm opacity-70 mb-4">
@@ -533,8 +405,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
