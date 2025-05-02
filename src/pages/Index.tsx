@@ -203,7 +203,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="animate-fade-in order-first md:order-last">
-              <img src="/lovable-uploads/3e2d3772-8a74-427e-a363-b0512c911f69.png" alt="Problemas de comunicación" className="w-full h-auto rounded-lg shadow-lg border border-[#36a7e3]/20" />
+              <img alt="Problemas de comunicación" className="w-full h-auto rounded-lg shadow-lg border border-[#36a7e3]/20" src="/lovable-uploads/7522cfd1-5b99-4179-ab97-abd6321b69ba.png" />
             </div>
           </div>
         </div>
